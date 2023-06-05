@@ -1,0 +1,13 @@
+name: taskwarrior-gtd
+version: 0.1.0
+
+authors:
+  - Cherry Ramatis <cherry.ramatis@icloud.com>
+
+targets:
+  taskwarrior-gtd:
+    main: src/taskwarrior-gtd.cr
+
+crystal: 1.8.2
+
+license: MIT
