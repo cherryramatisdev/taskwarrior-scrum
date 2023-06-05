@@ -1,6 +1,6 @@
-# taskwarrior-scrum
+# Taskwarrior Scrum
 
-TODO: Write a description here
+This binary is reponsible to read the files `~/.task/*.data` provided by [taskwarrior](https://taskwarrior.org/) and output with cool UIs for your different scrum rituals.
 
 ## Installation
 
