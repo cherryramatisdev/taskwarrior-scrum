@@ -1,12 +1,12 @@
-name: taskwarrior-gtd
+name: taskwarrior-scrum
 version: 0.1.0
 
 authors:
   - Cherry Ramatis <cherry.ramatis@icloud.com>
 
 targets:
-  taskwarrior-gtd:
-    main: src/taskwarrior-gtd.cr
+  taskwarrior-scrum:
+    main: src/taskwarrior-scrum.cr
 
 crystal: 1.8.2
 

@@ -1,2 +1,2 @@
 require "spec"
-require "../src/taskwarrior-gtd"
+require "../src/taskwarrior-scrum"
