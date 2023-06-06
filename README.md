@@ -10,7 +10,10 @@ TODO: Write installation instructions here
 
 TODO: Write usage instructions here
 
-https://github.com/cherryramatisdev/cherryramatisdev-taskwarrior-scrum/assets/86631177/5a7ab453-e4c6-4b15-aa5a-fdb456eb1415
+
+https://github.com/cherryramatisdev/cherryramatisdev-taskwarrior-scrum/assets/86631177/93a74b96-bde4-4f78-842c-e567a38b5a99
+
+
 
 ## Development
 
