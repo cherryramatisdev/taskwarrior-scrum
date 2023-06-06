@@ -1,2 +1,6 @@
 version: 2.0
-shards: {}
+shards:
+  tallboy:
+    git: https://github.com/epoch/tallboy.git
+    version: 0.9.3
+
