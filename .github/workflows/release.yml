@@ -1,0 +1,35 @@
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Download source
+        uses: actions/checkout@v2
+      - name: Install Crystal
+        uses: crystal-lang/install-crystal@v1
+      - name: Build for linux
+        if: ${{ matrix.os != 'macos-latest' }}
+        run: shards build --production --release --static --no-debug -obin/${{ matrix.os }}
+      - name: Build for macos
+        if: ${{ matrix.os == 'macos-latest' }}
+        run: shards build --production --release --no-debug -obin/${{ matrix.os }}
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: artifact-${{matrix.os}}
+          path: bin/${{matrix.os}}
+      - name: Generate release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.run_number }}
+          files: "bin/*"
