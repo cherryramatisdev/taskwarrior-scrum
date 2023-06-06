@@ -9,6 +9,7 @@ class Tui
         add "description"
         add "status"
         add "uuid"
+        add "created_at"
       end
 
       header
@@ -19,7 +20,7 @@ class Tui
 
   def self.rows(data : TaskWarriorData) : Array(Array(String))
     data.map do |task|
-      [task["description"], task["status"], task["uuid"]]
+      [task["description"], task["status"], task["uuid"], Time.unix(task["entry"].to_i).to_s("%d/%m/%Y %H:%M")]
     end
   end
 end
