@@ -11,7 +11,12 @@ module CLI
 
     data = data.select { |task| task["status"] == "completed" }
 
-    table = Tui.new(data)
+    table = Tui.new(data).table
+
+    if table.nil?
+      puts "No completed tasks"
+      return
+    end
 
     puts table.render
   end
