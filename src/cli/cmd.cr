@@ -1,5 +1,6 @@
 module CLI
   enum Commands
+    Pending
     Completed
     Unknown
   end
@@ -8,6 +9,8 @@ module CLI
     case value
     when "completed"
       Commands::Completed
+    when "pending"
+      Commands::Pending
     else
       Commands::Unknown
     end
