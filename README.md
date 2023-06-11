@@ -4,17 +4,55 @@ This binary is reponsible to read the files `~/.task/*.data` provided by [taskwa
 
 ## Installation
 
-TODO: Write installation instructions here
+You can download from the [release page](https://github.com/cherryramatisdev/taskwarrior-scrum/releases)
 
 ## Usage
 
-TODO: Write usage instructions here
+Demo: https://github.com/cherryramatisdev/cherryramatisdev-taskwarrior-scrum/assets/86631177/efbd3c86-af5e-4ebe-a624-6ca48dab701d
 
-https://github.com/cherryramatisdev/cherryramatisdev-taskwarrior-scrum/assets/86631177/efbd3c86-af5e-4ebe-a624-6ca48dab701d
+Commands available with examples
 
-## Development
+- completed
 
-TODO: Write development instructions here
+```sh
+taskwarrior-scrum completed
+```
+
+or with a specific date
+
+```sh
+taskwarrior-scrum completed 05/06/2023
+```
+
+- daily
+
+```sh
+taskwarrior-scrum daily
+```
+
+or with a specific date
+
+```sh
+taskwarrior-scrum daily 05/06/2023
+```
+
+- pending
+
+```sh
+taskwarrior-scrum pending
+```
+
+or with a specific date
+
+```sh
+taskwarrior-scrum pending 05/06/2023
+```
+
+- generate
+
+```sh
+taskwarrior-scrum generate --type=zsh # type can be zsh or bash
+```
 
 ## Contributing
 

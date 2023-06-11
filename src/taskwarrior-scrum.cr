@@ -2,13 +2,16 @@ require "./cli/cmd"
 require "./cli/completed"
 require "./cli/pending"
 require "./cli/daily"
+require "./cli/generate_completion"
 
 if ARGV.size == 0
   puts "Usage: taskwarrior-scrum <command>"
   exit 1
 end
 
-case CLI.from_value(ARGV.first)
+command = CLI::Commands.from_str(ARGV.first)
+
+case command
 when CLI::Commands::Completed
   if ARGV.size > 1
     CLI.completed(ARGV[1])
@@ -27,6 +30,14 @@ when CLI::Commands::Daily
   else
     CLI.daily
   end
+when CLI::Commands::Generate
+  if ARGV.size <= 1
+    puts "Usage: taskwarrior-scrum generate --type=zsh"
+    exit 1
+  end
+
+  shell_type = ARGV[1].sub("--type=", "")
+  puts CLI::GenerateCompletion.generate(CLI::GenerateCompletion::ShellType.from_str(shell_type), command, "taskwarrior-scrum")
 else
   puts "Unknown command"
 end
