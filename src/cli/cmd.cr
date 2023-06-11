@@ -1,6 +1,7 @@
 module CLI
   enum Commands
     Pending
+    Daily
     Completed
     Unknown
   end
@@ -11,6 +12,8 @@ module CLI
       Commands::Completed
     when "pending"
       Commands::Pending
+    when "daily"
+      Commands::Daily
     else
       Commands::Unknown
     end
