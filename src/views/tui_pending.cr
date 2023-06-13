@@ -10,6 +10,7 @@ class TuiPending < Tui
       columns do
         add "description"
         add "status"
+        add "tags"
         add "created_at"
       end
 
@@ -25,7 +26,7 @@ class TuiPending < Tui
 
   private def rows(data : TaskWarriorData) : Array(Array(String))
     data.map do |task|
-      [task["description"], task["status"], UnixTime.unix_time_to_string_format(task["entry"].to_i, "%d/%m/%Y")]
+      [task["description"], task["status"], task["tags"] ||= "N/A", UnixTime.unix_time_to_string_format(task["entry"].to_i, "%d/%m/%Y")]
     end
   end
 end

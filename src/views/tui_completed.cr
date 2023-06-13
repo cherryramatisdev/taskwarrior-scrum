@@ -10,6 +10,7 @@ class TuiCompleted < Tui
       columns do
         add "description"
         add "status"
+        add "tags"
         add "created_at"
         add "ended_at"
         add "time spent"
@@ -27,7 +28,7 @@ class TuiCompleted < Tui
 
   private def rows(data : TaskWarriorData) : Array(Array(String))
     data.map do |task|
-      [task["description"], task["status"], self.unix_time_to_date(task["entry"].to_i), self.unix_time_to_date(task["end"].to_i), self.unix_time_to_time(task["end"].to_i - task["entry"].to_i)]
+      [task["description"], task["status"], task["tags"] ||= "N/A", self.unix_time_to_date(task["entry"].to_i), self.unix_time_to_date(task["end"].to_i), self.unix_time_to_time(task["end"].to_i - task["entry"].to_i)]
     end
   end
 
